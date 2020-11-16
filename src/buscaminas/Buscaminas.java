@@ -12,8 +12,8 @@ public class Buscaminas extends JFrame {
     // ATRIBUTOS
 
     // Dimensiones ventana
-    private static final int ANCHURA_VENTANA = 300;
-    private static final int ALTURA_VENTANA = 350;
+    private static final int ANCHURA_VENTANA = 310;
+    private static final int ALTURA_VENTANA = 360;
     // Dimensiones tablero
     private static final int ANCHURA_TABLERO = 300;
     private static final int ALTURA_TABLERO = 300;
