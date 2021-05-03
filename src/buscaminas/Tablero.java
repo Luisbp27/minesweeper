@@ -3,7 +3,6 @@ import java.awt.*;
 @SuppressWarnings("serial")
 
 public class Tablero extends JPanel {
-    // ATRIBUTOS
 
     // Matriz de objetos Casilla
     private final Casilla[][] c;
@@ -18,6 +17,7 @@ public class Tablero extends JPanel {
 
     /**
      * Constructor de la clase
+     * 
      */
     public Tablero() {
         c = new Casilla[9][9];
@@ -36,10 +36,9 @@ public class Tablero extends JPanel {
         this.setVisible(true);
     }
 
-    // MÉTODOS FUNCIONALES
-
     /**
      * Método que coloca los 81 objetos Casilla en el panel
+     * 
      */
     private void colocarCasillas() {
         for (int i = 0; i < 9; i++) {
@@ -59,6 +58,7 @@ public class Tablero extends JPanel {
 
     /**
      * Método que coloca las minas aleatoriamente en el tablero
+     * 
      */
     public void colocarMinas() {
         for (int i = 0; i < 10; i++) {
@@ -80,8 +80,9 @@ public class Tablero extends JPanel {
     /**
      * Método que pasadas las coordenadas de una bomba, coloca los correspondientes 
      * números en las casillas adyacentes
-     * @param fila - Número de fila de la casilla
-     * @param columna - Número de columna de la casilla
+     * 
+     * @param fila
+     * @param columna
      */
     public void colocarNumeros(int fila, int columna) {
         // Si está en el medio de la matriz
@@ -181,8 +182,9 @@ public class Tablero extends JPanel {
     /**
      * Método que pasada una fila y una columna, suma unos en las tres casillas 
      * siguientes
-     * @param fila - Nº de fila
-     * @param columna - Nº de columna
+     * 
+     * @param fila
+     * @param columna
      */
     public void colocarTresUnos(int fila, int columna) {
         for (int i = 0; i < 3; i++) {
@@ -194,8 +196,9 @@ public class Tablero extends JPanel {
     /**
      * Método que pasada una fila y una columna, suma unos en las dos casillas 
      * siguientes
-     * @param fila - Nº de fila
-     * @param columna - Nº de columna
+     * 
+     * @param fila
+     * @param columna
      */
     public void colocarDosUnos(int fila, int columna) {
         for (int i = 0; i < 2; i++) {
@@ -206,8 +209,9 @@ public class Tablero extends JPanel {
 
     /**
      * Método que pasada una fila y una columna, suma uno a la casilla correspondiente
-     * @param fila - Nº de fila
-     * @param columna - Nº de columna
+     * 
+     * @param fila
+     * @param columna
      */
     public void colocarUnUno(int fila, int columna) {
         if(numerosCasillas[fila][columna] != -1) numerosCasillas[fila][columna]++;
@@ -215,6 +219,7 @@ public class Tablero extends JPanel {
 
     /**
      * Método que destapa el tablero entero
+     * 
      */
     public void destapar() {
         for (int i = 0; i < 9; i++) {
@@ -238,6 +243,7 @@ public class Tablero extends JPanel {
 
     /**
      * Método que tapa el tablero en su totalidad
+     * 
      */
     public void tapar() {
         for (int i = 0; i < 9; i++) {
@@ -253,6 +259,7 @@ public class Tablero extends JPanel {
 
     /**
      * Método que tapa el tablero en su totalidad cuando reiniciamos la partida
+     * 
      */
     public void taparReinicio() {
         for (int i = 0; i < 9; i++) {
@@ -270,8 +277,9 @@ public class Tablero extends JPanel {
      * Método que destapa la casilla correspondiente segun las coordenadas pasadas 
      * por parámetro. Según que número tenga en el numeroCasillas[][], 
      * mostrará la imágen de un número u otro.
-     * @param x - Coordenada X
-     * @param y - Coordenada Y
+     * 
+     * @param x
+     * @param y
      */
     public void destaparCasilla(int x, int y) {
         c[x][y].colocarImagenNumero(numerosCasillas[x][y]);
@@ -282,9 +290,10 @@ public class Tablero extends JPanel {
      * Método que pasados tres matrices de enteros por parámetro, actualiza los 
      * atributos numeroCasillas, estadoCasillas
      * y estadoBanderas.
-     * @param numeros - Matriz de números
-     * @param estados - Matriz de estados de las casillas
-     * @param banderas - Matriz de banderas
+     * 
+     * @param numeros
+     * @param estados
+     * @param banderas
      */
     public void cargarTablero(int[][] numeros, int[][] estados, int[][] banderas) {
         tapar();
@@ -310,8 +319,9 @@ public class Tablero extends JPanel {
     /**
      * Método que pasadas la fila y la columna de la casilla, coloca la imagen 
      * de la explosion
-     * @param fila - Nº de fila
-     * @param columna Nº de columna
+     * 
+     * @param fila
+     * @param columna
      */
     public void colocarExplosion(int fila, int columna) {
         c[fila][columna].colocarImagenExplosion();
@@ -320,8 +330,9 @@ public class Tablero extends JPanel {
     /**
      * Método que pasadas la fila y la columna de la casilla, coloca la imagen 
      * de la bandera
-     * @param fila - Nº de fila
-     * @param columna Nº de columna
+     * 
+     * @param fila
+     * @param columna
      */
     public void colocarBandera(int fila, int columna) {
         estadoBanderas[fila][columna] = 1;
@@ -331,8 +342,9 @@ public class Tablero extends JPanel {
     /**
      * Método que pasadas la fila y la columna de la casilla, quita la imágen 
      * de la bandera
-     * @param fila - Nº de fila
-     * @param columna Nº de columna
+     * 
+     * @param fila
+     * @param columna
      */
     public void quitarBandera(int fila, int columna) {
         estadoBanderas[fila][columna] = 0;
@@ -342,8 +354,9 @@ public class Tablero extends JPanel {
     /**
      * Método que pasadas la fila y la columnad de una casilla, devuelve si esta 
      * está tapada o no
-     * @param fila - Nº fila
-     * @param columna - Nº de columna
+     * 
+     * @param fila
+     * @param columna
      * @return
      */
     public boolean isTapada(int fila, int columna) {
@@ -353,8 +366,9 @@ public class Tablero extends JPanel {
     /**
      * Método que pasadas la fila y la columna de la casilla, verifica si hay o 
      * no una bandera
-     * @param fila - Nº de fila
-     * @param columna - Nº de columna
+     * 
+     * @param fila
+     * @param columna
      * @return
      */
     public boolean hayBandera(int fila, int columna) {
@@ -364,18 +378,18 @@ public class Tablero extends JPanel {
     /**
      * Método que pasadas la fila y la columna de la casilla, verifica si hay o 
      * no una mina
-     * @param fila - Nº de fila
-     * @param columna - Nº de columna
+     * 
+     * @param fila
+     * @param columna
      * @return
      */
     public boolean hayMina(int fila, int columna) {
         return numerosCasillas[fila][columna] == -1;
     }
 
-    // GETTERS Y SETTERS
-
     /**
      * Método que devuelve el valor del atriubuto numerosCasillas
+     * 
      * @return
      */
     public int[][] getNumerosCasillas() {
@@ -384,6 +398,7 @@ public class Tablero extends JPanel {
 
     /**
      * Método que devuelve el atributo estadoCasillas
+     * 
      * @return
      */
     public int[][] getEstadoCasillas() {
@@ -392,6 +407,7 @@ public class Tablero extends JPanel {
 
     /**
      * Método que devuelve el atributo estadoBanderas
+     * 
      * @return
      */
     public int[][] getEstadoBanderas() {
@@ -400,6 +416,7 @@ public class Tablero extends JPanel {
 
     /**
      * Método que devuelve el valor del atrivuto editable
+     * 
      * @return
      */
     public boolean isEditable() {

@@ -9,7 +9,6 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 @SuppressWarnings("serial")
 
 public class Buscaminas extends JFrame {
-    // ATRIBUTOS
 
     // Dimensiones ventana
     private static final int ANCHURA_VENTANA = 310;
@@ -230,10 +229,9 @@ public class Buscaminas extends JFrame {
         });
     }
 
-    // MAIN
-
     /**
      * Main principal
+     * 
      * @param args - String
      */
     public static void main(String[] args){

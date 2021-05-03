@@ -1,13 +1,13 @@
 import java.io.*;
 
 public class TableroOut {
-    // ATRIBUTOS
 
     private final ObjectOutputStream objectOutputStream;
 
     /**
      * Constructor de la clase
-     * @param file - File
+     * 
+     * @param file
      * @throws IOException
      */
     public TableroOut(File file) throws IOException {
@@ -18,7 +18,8 @@ public class TableroOut {
     /**
      * Método para guardar los atributos necesarios de un objeto Tablero pasado 
      * por parámetro
-     * @param tablero - Objeto Tablero
+     * 
+     * @param tablero 
      * @throws IOException
      */
     public void guardarTablero(Tablero tablero) throws IOException {
@@ -36,6 +37,7 @@ public class TableroOut {
 
     /**
      * Método que cierra el enlace con el fichero
+     * 
      * @throws IOException
      */
     public void close() throws IOException {

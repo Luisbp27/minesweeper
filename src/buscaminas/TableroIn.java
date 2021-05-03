@@ -7,17 +7,19 @@ public class TableroIn {
 
     /**
      * Constructor de la clase
-     * @param file - File
+     * 
+     * @param file
      * @throws IOException
      */
     public TableroIn(File file) throws IOException {
         // Establecemos enlace con el fichero
-        objectInputStream = new ObjectInputStream(new FileInputStream(file));
+        this.objectInputStream = new ObjectInputStream(new FileInputStream(file));
     }
 
     /**
      * Método que carga el objeto Tablero del fichero
-     * @param tablero - Objeto Tablero
+     * 
+     * @param tablero
      * @throws IOException
      * @throws java.lang.ClassNotFoundException
      */
@@ -34,6 +36,7 @@ public class TableroIn {
 
     /**
      * Método que cierra el enlace con el fichero
+     * 
      * @throws IOException
      */
     public void close() throws IOException {
