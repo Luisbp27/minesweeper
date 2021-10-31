@@ -1,3 +1,2 @@
 ## Buscaminas
-
-Implementación del clásico juego del Buscaminas. Este es un trabajo para la asignatura de Programación I de primero de carrera.
+Implementation of the cassic Minesweeper game. This is a project for Programming I.
